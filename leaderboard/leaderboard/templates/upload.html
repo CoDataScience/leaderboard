@@ -1,0 +1,15 @@
+{% extends 'overall_template.html' %}
+
+{% block 'container' %}
+    <form action="{% url "uploadedFile" %}" method="post" enctype="multipart/form-data" class="form-vertical">
+        {% csrf_token %}
+
+        <label for="id_docfile">Upload the File</label>
+        <br>
+        <div class="form-group">
+            <input type="file" name="sentFile" id="id_docfile" />
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </div>
+    </form>
+{% endblock %}
+

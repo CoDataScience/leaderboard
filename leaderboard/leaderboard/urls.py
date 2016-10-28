@@ -24,4 +24,6 @@ urlpatterns = [
     url(r'', include('social.apps.django_app.urls', namespace='social')),
     url(r'^$', TemplateView.as_view(template_name='signup.html')),
     url(r'^logout/$', views.logout, name='logout'),
+    url(r'^uploadAFile/', views.uploadAFile, name='uploadAFile'),
+    url(r'^uploadedFile/', views.uploadedFile, name='uploadedFile'),
 ]
