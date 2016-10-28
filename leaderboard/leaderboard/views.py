@@ -11,6 +11,7 @@ from social.backends.google import GooglePlusAuth
 from social.backends.utils import load_backends
 from social.apps.django_app.utils import psa
 
+import odc as odc
 
 def logout(request):
     """Logs out user"""
@@ -26,8 +27,15 @@ def uploadAFile(request):
 @login_required(login_url="/login/google-oauth2/")
 def uploadedFile(request):
     fileUploaded = request.FILES['sentFile']
-    return HttpResponse(fileUploaded)
-
+    # print type(fileUploaded)
+    result = odc.score(False,'leaderboard/all_val_spend.csv',fileUploaded)
+    # print odc.score(False,'all_val_spend.csv',fileUploaded)
+    # return HttpResponse(fileUploaded)
+    return render(
+        request,
+        'signup.html',
+        {'displayContent': result}
+        )
 
     # Handle file upload
     # if request.method == 'POST':

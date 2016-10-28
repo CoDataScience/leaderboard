@@ -10,4 +10,5 @@ class SocialAuthExceptionMiddleware(SocialAuthExceptionMiddleware):
         elif type(exception) == AuthForbidden:
             return render(request, "signup.html", {"error_message": "Login using your Colorado.edu email ID"})
         else:
+            print type(exception)
             return HttpResponse("Error! Report to the administrator")

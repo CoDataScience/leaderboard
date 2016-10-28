@@ -15,6 +15,11 @@
     {% else %}
         <h1>You need to login to upload a file</h1>
     {% endif %}
+
+    {% if displayContent %}
+        <h4> Your response score is {{ displayContent.revenue | safe }}</h4>
+        <h4> No of responders score is {{ displayContent.responders | safe }}</h4>
+    {% endif %}
 {% endblock %}
 
 
