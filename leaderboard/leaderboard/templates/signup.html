@@ -1,0 +1,14 @@
+{% extends 'overall_template.html' %}
+
+{% block 'container' %}
+    <h1>Hello , {{request.user.username}}</h1>
+<!-- <div class="social-wrap">
+    <a href="{% url 'social:begin' 'google-oauth2' %}?next=/">
+        <button class="googleplus">Sign up with Google</button>
+    </a>
+</div> -->
+{% endblock %}
+
+
+
+

@@ -14,6 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,6 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'social.backends.google.GoogleOAuth2',
+    'social.backends.google.GooglePlusAuth'
+)
 
 # Application definition
 
@@ -37,6 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
+    'leaderboard',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -62,6 +71,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -69,6 +80,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'leaderboard.wsgi.application'
 
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
+SOCIAL_AUTH_GOOGLE_OAUTH2_WHITELISTED_DOMAINS = ['colorado.edu']
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
@@ -99,6 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = [ ('id', 'id'), ('picture', 'picture') ]
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
@@ -113,6 +129,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+TEMPLATES_DIR = (
+    os.path.join(SETTINGS_PATH, 'templates'),
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/

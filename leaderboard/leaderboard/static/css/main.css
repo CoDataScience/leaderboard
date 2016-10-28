@@ -1,0 +1,128 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+label[for="id_docfile"]{
+    /*width: 90px;
+    background-color: #900;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 11px;
+    text-align: center;
+    content: #FFF;*/
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-repeat: repeat-x;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+    cursor: pointer; 
+    display: block;
+    color: #fff;
+    background-color: #28a4c9;
+    background-image: linear-gradient(to bottom,#5bc0de 0,#2aabd2 100%);
+    width: 100%;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.axis {
+      font: 10px sans-serif;
+    }
+    
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis--x path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+li.social-wrap button {
+    background-color: white;
+    padding-left: 35px;
+    
+    
+    background-size: 30px 30px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    margin-bottom: 15px;
+    width: 170px;
+    border-bottom: 2px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    box-shadow: 0 4px 2px -2px gray;
+    font-family: source_sans_prosemibold, arial, helvetica, sans-serif;
+    font-size: 12px;
+    padding: 0
+}
+
+li.social-wrap button:active {
+    background-color: #FFF;
+}
+
+li.social-wrap a:active {
+    padding: 0 0 0px 0 ;
+    height: 15px;
+}
+
+
+.nav > li.social-wrap > a {
+  position: relative;
+  display: block;
+  padding: 15px 0px 0px 0px ;
+}
+
+.nav > li.social-wrap {
+  float: right;
+  padding-left: 50px ;
+}
+
+.nav > li.username {
+  color: white;
+  padding: 15px 50px 0px 50px ;
+}
+
+.nav > li.logout {
+  float: right;
+  color: white;
+}
+
+/*.nav > li.social-wrap > a:hover {
+  background: black;
+}*/
+
+li.social-wrap button.googleplus {
+    background-image:url(http://cdn.business2community.com/wp-content/uploads/2013/06/Marketing-Best-Practice-with-Google-Plus-Business-pages.png);
+    cursor: pointer;
+    padding: 0
+}
+
+li.social-wrap button.googleplus:hover {
+    background-image:url(http://cdn.business2community.com/wp-content/uploads/2013/06/Marketing-Best-Practice-with-Google-Plus-Business-pages.png);
+    color: black;
+}

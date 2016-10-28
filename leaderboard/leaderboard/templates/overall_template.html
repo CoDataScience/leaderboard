@@ -1,0 +1,70 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>UPOD</title>
+
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+      <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+      
+
+      <link rel="stylesheet" href="{% static 'css/main.css' %}">
+      {% block 'includeOtherJSFiles' %}
+      {% endblock %}
+  </head>
+
+  <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"  aria-  expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">Codata Leaderboard</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/uploadAFile">Upload a File</a></li>
+                {% if request.user.is_authenticated %}
+                  <li class="username"> Hi, {{ request.user.username }}</li>
+                  <li class="logout"> <a href="/logout/"> Logout </a></li>
+                {% else %}
+                  <li> </li>
+                  <li class="social-wrap">
+                  <a href="{% url 'social:begin' 'google-oauth2' %}?next=/">
+                      <button class="googleplus">Sign up with Google</button>
+                  </a>
+                  </li>
+                {% endif %}
+                
+              </ul>
+            </div>
+          </div>
+      </nav>
+      <div class="container">
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="jumbotron">
+            <h1>Welcome to <br>Codata Leaderboard </h1>
+            <p>You can upload your file and see the place where you stand in the Leaderboard</p>
+          </div>
+          
+        {% block 'container' %}
+        {% endblock %}
+      </div>
+        {% block 'justbeforebodyends' %}
+        {% endblock %}
+  </body>
+</html>
