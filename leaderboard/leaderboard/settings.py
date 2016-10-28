@@ -56,7 +56,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'leaderboard.middleware.SocialAuthExceptionMiddleware',
+    
 ]
+
 
 ROOT_URLCONF = 'leaderboard.urls'
 
@@ -81,9 +84,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'leaderboard.wsgi.application'
 
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '959614351217-qu6ejsm2bblg4j2orh2q6e0rtrfaj94j.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'qWY47M3GYZF_6cp09zDgVVkg'
 SOCIAL_AUTH_GOOGLE_OAUTH2_WHITELISTED_DOMAINS = ['colorado.edu']
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases

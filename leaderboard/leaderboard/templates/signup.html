@@ -1,6 +1,15 @@
 {% extends 'overall_template.html' %}
 
 {% block 'container' %}
+    {% if error_message %}
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="alert alert-danger" role="alert">
+            <b>{{error_message}}</b>
+          </div>
+        </div>
+      </div>
+    {% endif %}
     {% if request.user.is_authenticated %}
         <h1>You can upload your file</h1>
     {% else %}
