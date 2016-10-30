@@ -6,6 +6,11 @@ body {
   text-align: center;
 }
 
+#navbar-title {
+  color: #fff;
+  margin-left: -40px;
+}
+
 label[for="id_docfile"]{
     /*width: 90px;
     background-color: #900;
@@ -62,30 +67,7 @@ input[type="file"]{
   stroke-width: 1.5px;
 }
 
-li.social-wrap button {
-    background-color: white;
-    padding-left: 35px;
-    
-    
-    background-size: 30px 30px;
-    background-position: left center;
-    background-repeat: no-repeat;
-    margin-bottom: 15px;
-    width: 170px;
-    border-bottom: 2px solid transparent;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
-    box-shadow: 0 4px 2px -2px gray;
-    font-family: source_sans_prosemibold, arial, helvetica, sans-serif;
-    font-size: 12px;
-    padding: 0
-}
-
-li.social-wrap button:active {
-    background-color: #FFF;
-}
-
-li.social-wrap a:active {
+li.social-wrap a:active{
     padding: 0 0 0px 0 ;
     height: 15px;
 }
@@ -112,6 +94,13 @@ li.social-wrap a:active {
   color: white;
 }
 
+.nav > li.username {
+  float: right;
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: white;
+}
+
 /*.nav > li.social-wrap > a:hover {
   background: black;
 }*/
@@ -119,7 +108,7 @@ li.social-wrap a:active {
 li.social-wrap button.googleplus {
     background-image:url(http://cdn.business2community.com/wp-content/uploads/2013/06/Marketing-Best-Practice-with-Google-Plus-Business-pages.png);
     cursor: pointer;
-    padding: 0
+    padding: 0;
 }
 
 li.social-wrap button.googleplus:hover {

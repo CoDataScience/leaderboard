@@ -22,7 +22,7 @@ from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('social.apps.django_app.urls', namespace='social')),
-    url(r'^$', TemplateView.as_view(template_name='signup.html')),
+    url(r'^$', TemplateView.as_view(template_name='signup.html'), name='home'),
     url(r'^logout/$', views.logout, name='logout'),
     url(r'^uploadAFile/', views.uploadAFile, name='uploadAFile'),
     url(r'^uploadedFile/', views.uploadedFile, name='uploadedFile'),
