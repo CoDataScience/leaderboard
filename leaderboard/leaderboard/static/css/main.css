@@ -67,26 +67,47 @@ input[type="file"]{
   stroke-width: 1.5px;
 }
 
-li.social-wrap a:active{
+li.social-wrap button {
+  background-color: white;
+  
+  
+  background-size: 30px 30px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  margin-bottom: 15px;
+  width: 180px;
+  border-bottom: 2px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  box-shadow: 0 4px 2px -2px gray;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+}
+
+
+/*li.social-wrap button:active {
+    background-color: #FFF;
+}*/
+
+/*li.social-wrap a:active{
     padding: 0 0 0px 0 ;
     height: 15px;
 }
-
+*/
 
 .nav > li.social-wrap > a {
   position: relative;
   display: block;
-  padding: 15px 0px 0px 0px ;
+  padding: 13px 0px 0px 0px ;
 }
 
-.nav > li.social-wrap {
+/*.nav > li.social-wrap {
   float: right;
   padding-left: 50px ;
-}
+}*/
 
 .nav > li.username {
   color: white;
-  padding: 15px 50px 0px 50px ;
 }
 
 .nav > li.logout {
@@ -94,16 +115,14 @@ li.social-wrap a:active{
   color: white;
 }
 
-.nav > li.username {
+/*.nav > li.username {
   float: right;
-}
-.navbar-inverse .navbar-nav>li>a {
-  color: white;
-}
-
-/*.nav > li.social-wrap > a:hover {
-  background: black;
 }*/
+/*.navbar-inverse .navbar-nav>li>a {
+  color: white;
+}*/
+
+
 
 li.social-wrap button.googleplus {
     background-image:url(http://cdn.business2community.com/wp-content/uploads/2013/06/Marketing-Best-Practice-with-Google-Plus-Business-pages.png);
@@ -114,4 +133,5 @@ li.social-wrap button.googleplus {
 li.social-wrap button.googleplus:hover {
     background-image:url(http://cdn.business2community.com/wp-content/uploads/2013/06/Marketing-Best-Practice-with-Google-Plus-Business-pages.png);
     color: black;
+    padding: 0;
 }

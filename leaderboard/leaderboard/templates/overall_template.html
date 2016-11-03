@@ -41,12 +41,13 @@
           <ul class="nav navbar-nav navbar-right">
 	    {% with request.resolver_match.url_name as url_name %}
 	    {% if request.user.is_authenticated %}
-            <li class="logout {% if url_name == 'logout' %}active{%endif%}"> <a href="/logout/"> Logout </a></li>
-            <li class="username"> Logged in as {{ request.user.username }}</li>
+            <li class="username"> Logged in as {{ request.user.first_name }}</li>
+            <li class="{% if url_name == 'logout' %}active{%endif%}"> <a href="/logout/"> Logout </a></li>
+            
             {% else %}
             <li class="social-wrap">
               <a href="{% url 'social:begin' 'google-oauth2' %}?next=/">
-                <button class="btn btn-danger btn-sm">Log In with Gmail</button>
+                <button class="googleplus">Sign in with Google</button>
               </a>
             </li>
             {% endif %}
