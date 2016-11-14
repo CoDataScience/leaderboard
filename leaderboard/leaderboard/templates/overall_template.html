@@ -32,7 +32,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
 	    {% with request.resolver_match.url_name as url_name %}
-            <li class="{% if url_name == 'home' %}active{%endif%}"><a href="#">Home</a></li>
+            <li class="{% if url_name == 'home' %}active{%endif%}"><a href="/">Home</a></li>
             {% if request.user.is_authenticated %}
             <li class="{% if url_name == 'uploadAFile' %}active{%endif%}"><a href="/uploadAFile">Make a submission</a></li>
             {% endif %}
